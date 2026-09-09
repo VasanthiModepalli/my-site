@@ -5,55 +5,21 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dark Matter: Finding a Way Home Across the Multiverse — Notes</title>
-<script>
-(function(){
-  var stored = localStorage.getItem('theme');
-  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var theme = stored || (prefersDark ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', theme);
-})();
-</script>
 <style>
-:root{
-  --bg:#ffffff;
-  --card-bg:#ffffff;
-  --text:#111111;
-  --muted:#555555;
-  --border:#e5e5e5;
-  --tag-bg:#f5f5f5;
-  --shadow:rgba(0,0,0,0.06);
-  --spoiler-bg:#fff8e6;
-  --spoiler-border:#e6b400;
-}
-[data-theme="dark"]{
-  --bg:#121212;
-  --card-bg:#1c1c1c;
-  --text:#f0f0f0;
-  --muted:#aaaaaa;
-  --border:#333333;
-  --tag-bg:#2a2a2a;
-  --shadow:rgba(0,0,0,0.4);
-  --spoiler-bg:#3a2f0a;
-  --spoiler-border:#e6b400;
-}
 *{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:2rem;color:var(--text);background:var(--bg);transition:background .2s ease,color .2s ease}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:2rem;color:#f0f0f0;background:#121212}
 header{margin-bottom:1.5rem}
-.card{max-width:720px;border-radius:12px;padding:1.25rem;background:var(--card-bg);box-shadow:0 6px 18px var(--shadow);transition:background .2s ease,box-shadow .2s ease}
+.card{max-width:720px;border-radius:12px;padding:1.25rem;background:#1c1c1c;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
 h1{margin:0 0 .5rem;font-size:1.5rem}
 p{margin:.85rem 0;line-height:1.6}
-.mono{font-family:monospace;background:var(--tag-bg);padding:.25rem .5rem;border-radius:6px}
-.blog-tag{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;background:var(--tag-bg);padding:.2rem .55rem;border-radius:999px;color:var(--muted);margin-bottom:.75rem}
-.back-link{display:inline-block;margin-top:1.5rem;text-decoration:none;color:var(--text);font-size:.9rem;border-bottom:1px solid var(--text)}
-.back-link:hover{color:var(--muted);border-color:var(--muted)}
-.spoiler-note{background:var(--spoiler-bg);border-left:3px solid var(--spoiler-border);padding:.75rem 1rem;border-radius:6px;font-size:.9rem}
-
-#theme-toggle{position:fixed;top:1rem;right:1rem;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease,transform .15s ease}
-#theme-toggle:hover{transform:scale(1.08)}
+.mono{font-family:monospace;background:#2a2a2a;padding:.25rem .5rem;border-radius:6px}
+.blog-tag{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;background:#2a2a2a;padding:.2rem .55rem;border-radius:999px;color:#aaaaaa;margin-bottom:.75rem}
+.back-link{display:inline-block;margin-top:1.5rem;text-decoration:none;color:#f0f0f0;font-size:.9rem;border-bottom:1px solid #f0f0f0}
+.back-link:hover{color:#aaaaaa;border-color:#aaaaaa}
+.spoiler-note{background:#3a2f0a;border-left:3px solid #e6b400;padding:.75rem 1rem;border-radius:6px;font-size:.9rem}
 </style>
 </head>
 <body>
-<button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 <main class="card">
 <header>
 <span class="blog-tag">Books</span>
@@ -82,20 +48,5 @@ p{margin:.85rem 0;line-height:1.6}
 
 <a class="back-link" href="../index.html">&larr; Back to home</a>
 </main>
-<script>
-var btn = document.getElementById('theme-toggle');
-function updateIcon(){
-  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  btn.textContent = isDark ? '☀️' : '🌙';
-}
-updateIcon();
-btn.addEventListener('click', function(){
-  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  var next = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  updateIcon();
-});
-</script>
 </body>
 </html>
